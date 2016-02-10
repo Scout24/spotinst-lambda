@@ -17,6 +17,15 @@ describe("util getTokenAndConfig", function() {
     });
   });
 
+  it("should find the accessToken, groupConfig and rollPercentage if present", function(cb) {
+    util.getTokenAndConfig(_.merge({accessToken: 123456}, groupConfig,{rollPercentage: 100}),function(err,res) {
+      assert.ifError(err);
+      assert.deepEqual(res,{token: 123456, config: groupConfig.group,rollPercentage: 100});
+      cb();
+    });
+  });
+
+
   it("should find the accessToken and groupConfig from CloudFormation", function(cb) {
     util.getTokenAndConfig({ResourceProperties: _.merge({accessToken: 123456}, groupConfig)},function(err,res) {
       assert.ifError(err);
