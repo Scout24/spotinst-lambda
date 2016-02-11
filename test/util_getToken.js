@@ -1,6 +1,7 @@
 var assert = require('assert'),
   nock = require('nock'),
-  util = require('../lib/util');
+  util = require('../lib/util'),
+  mockery = require('mockery');
 
 describe("util getToken", function() {
 
@@ -29,6 +30,9 @@ describe("util getToken", function() {
            'x-response-time': '135ms',
            'content-length': '901',
            connection: 'Close' });
+
+    mockery.enable();
+
 
   });
 
