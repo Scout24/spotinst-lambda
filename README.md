@@ -56,6 +56,16 @@ will be used to return the correct physicalResourceId to the stack.
 
 ResourceType must be set to `elasticgroup`
 
+## parameters 
+
+* "username": Email of the spotinst user to use to spotinst API with
+* "password": KMS encrypted password of the above user
+* "clientId": the API client IT ot the above spotinst user,
+* "clientSecret": the client secret of the above spotinst user,
+* "rollPercentage": 1-100 if you give this parameter, after updating the elastigroup a stack roll will be 
+initiated to force an update of the elastigroup instances using the given percentage as roll percentage   
+
+
 
 ## Examples
 
@@ -123,15 +133,6 @@ ResourceType must be set to `elasticgroup`
 
 
 ### CloudFormation
-
-* "username": Email of the spotinst user to use to spotinst API with
-* "password": KMS encrypted password of the above user
-* "clientId": the API client IT ot the above spotinst user,
-* "clientSecret": the client secret of the above spotinst user,
-* "rollPercentage": 1-100 if you give this parameter, after updating the elastigroup a stack roll will be 
-initiated to force an update of the elastigroup instances using the given percentage as roll percentage   
-
-
 
     {
       "AWSTemplateFormatVersion": "2010-09-09",
