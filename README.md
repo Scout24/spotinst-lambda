@@ -62,7 +62,10 @@ ResourceType must be set to `elasticgroup`
 ### Lambda - create elasticgroup
 
     {
-      "accessToken": TOKEN
+      "username": USERNAME
+      "password": KMS encrypted spotinst password
+      "clientId": SPOTINST_API_CLIENT_ID
+      "clientSecret": SPOTINST_API_CLIENT_SECRET
       "requestType": "create",
       "resourceType": "elasticgroup",
       "group": {
@@ -109,7 +112,10 @@ ResourceType must be set to `elasticgroup`
 ### Lambda - delete elasticgroup
 
     {
-      "accessToken": TOKEN
+      "username": USERNAME
+      "password": KMS encrypted spotinst password
+      "clientId": SPOTINST_API_CLIENT_ID
+      "clientSecret": SPOTINST_API_CLIENT_SECRET
       "requestType": "delete",
       "resourceType": "elasticgroup",
       "groupId": ELASTICGROUP_ID
@@ -118,6 +124,15 @@ ResourceType must be set to `elasticgroup`
 
 ### CloudFormation
 
+* "username": Email of the spotinst user to use to spotinst API with
+* "password": KMS encrypted password of the above user
+* "clientId": the API client IT ot the above spotinst user,
+* "clientSecret": the client secret of the above spotinst user,
+* "rollPercentage": 1-100 if you give this parameter, after updating the elastigroup a stack roll will be 
+initiated to force an update of the elastigroup instances using the given percentage as roll percentage   
+
+
+
     {
       "AWSTemplateFormatVersion": "2010-09-09",
       "Resources": {
@@ -125,7 +140,11 @@ ResourceType must be set to `elasticgroup`
           "Type": "Custom::elasticgroup",
           "Properties": {
             "ServiceToken": SERVICE_TOKEN,
-            "accessToken": TOKEN,
+            "username": USERNAME,
+            "password": KMS encrypted spotinst password,
+            "clientId": SPOTINST_API_CLIENT_ID,
+            "clientSecret": SPOTINST_API_CLIENT_SECRET,
+            "rollPercentage":100,  
             "group": {
               "name": "test",
               "strategy": {
