@@ -4,13 +4,13 @@ AWS Lambda functions to Create, Update and Cancel [Spotinst](http://spotinst.com
 
 
 [![Build
-Status](https://travis-ci.org/SungardAS/spotinst-lambda.svg?branch=master)](https://travis-ci.org/SungardAS/spotinst-lambda?branch=master)
+Status](https://travis-ci.org/Immbilienscout24/spotinst-lambda.svg?branch=master)](https://travis-ci.org/Immobilienscout24/spotinst-lambda?branch=master)
 [![Code
-Climate](https://codeclimate.com/github/SungardAS/spotinst-lambda/badges/gpa.svg?branch=master)](https://codeclimate.com/github/SungardAS/spotinst-lambda?branch=master)
+Climate](https://codeclimate.com/github/Immbilienscout24/spotinst-lambda/badges/gpa.svg?branch=master)](https://codeclimate.com/github/Immbilienscout24/spotinst-lambda?branch=master)
 [![Coverage
-Status](https://coveralls.io/repos/SungardAS/spotinst-lambda/badge.svg?branch=master)](https://coveralls.io/r/SungardAS/spotinst-lambda?branch=master)
+Status](https://coveralls.io/repos/Immbilienscout24/spotinst-lambda/badge.svg?branch=master)](https://coveralls.io/r/Immbilienscout24/spotinst-lambda?branch=master)
 [![Dependency
-Status](https://david-dm.org/SungardAS/spotinst-lambda.svg?branch=master)](https://david-dm.org/SungardAS/spotinst-lambda?branch=master)
+Status](https://david-dm.org/Immbilienscout24/spotinst-lambda.svg?branch=master)](https://david-dm.org/Immbilienscout24/spotinst-lambda?branch=master)
 
 ## AWS Lambda
 
@@ -20,7 +20,7 @@ Status](https://david-dm.org/SungardAS/spotinst-lambda.svg?branch=master)](https
 
 `username` - Spotinst Username
 
-`password` - Spotinst Password
+`password` - KMS encrypted Spotinst Password
 
 `clientId` - Client ID for Spotinst Account
 
@@ -28,9 +28,10 @@ Status](https://david-dm.org/SungardAS/spotinst-lambda.svg?branch=master)](https
 
 #### Temp Credentials
 
-`accessCode` - Short term access code retrieved using Spotinst token
-service
+`accessCode` - Short term access code retrieved using Spotinst token service
 
+This is not a good choice, as the stack will become unable to roll back, when the token expires, 
+leading to a broken cloudformation stack:
 
 #### handler
 index/handler
