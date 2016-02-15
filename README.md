@@ -7,8 +7,6 @@ AWS Lambda functions to Create, Update and Cancel [Spotinst](http://spotinst.com
 Status](https://travis-ci.org/ImmobilienScout24/spotinst-lambda.svg?branch=master)](https://travis-ci.org/ImmobilienScout24/spotinst-lambda?branch=master)
 [![Code
 Climate](https://codeclimate.com/github/ImmobilienScout24/spotinst-lambda/badges/gpa.svg?branch=master)](https://codeclimate.com/github/ImmobilienScout24/spotinst-lambda?branch=master)
-[![Coverage
-Status](https://coveralls.io/repos/ImmobilienScout24/spotinst-lambda/badge.svg?branch=master)](https://coveralls.io/r/ImmobilienScout24/spotinst-lambda?branch=master)
 [![Dependency
 Status](https://david-dm.org/ImmobilienScout24/spotinst-lambda.svg?branch=master)](https://david-dm.org/ImmobilienScout24/spotinst-lambda?branch=master)
 
